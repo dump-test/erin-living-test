@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  erin_living_test_db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: "erin_living_test"
+      POSTGRES_USER: "test_123"
+      POSTGRES_PASSWORD: "test_123"
+    ports:
+      - "5000:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
